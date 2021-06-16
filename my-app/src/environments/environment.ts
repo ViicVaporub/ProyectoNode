@@ -4,6 +4,7 @@
 
 export const environment = {
   production: false,
+
  firebaseConfig:{
   apiKey: "AIzaSyBhLfRw9KoFGZC6IWMlEgxoBWh1sYRCuWI",
   authDomain: "ginaweb-f37cb.firebaseapp.com",
@@ -14,6 +15,7 @@ export const environment = {
   measurementId: "G-4M9BTKV1HP"
 },
 };
+
 
 /*
  * For easier debugging in development mode, you can import the following file
