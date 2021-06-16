@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule } from '@angular/forms';
-
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireAuthModule } from '@angular/fire/auth';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,6 +13,8 @@ import { FaqComponent } from './faq/faq.component';
 import { TiendaComponent } from './tienda/tienda.component';
 import { FooterComponent } from './footer/footer.component';
 import { DataDbService } from './service/data-db.service';
+import { environment } from 'src/environments/environment';
+
 
 @NgModule({
   declarations: [
@@ -26,7 +29,9 @@ import { DataDbService } from './service/data-db.service';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireAuthModule
   ],
   providers: [
     DataDbService

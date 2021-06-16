@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -9,7 +10,7 @@ import { FormGroup, FormControl } from '@angular/forms';
 export class LoginComponent implements OnInit {
   
   loginForm = new FormGroup({
-    user: new FormControl(''),
+    email: new FormControl(''),
     pass: new FormControl(''),
   });
 

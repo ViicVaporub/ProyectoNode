@@ -6,6 +6,13 @@
           "ginaweb-f37cb"
         ]
       }
+    },
+    "ginalogin-4fa2a": {
+      "hosting": {
+        "ProyectoAngular": [
+          "ginalogin-4fa2a"
+        ]
+      }
     }
   }
 }

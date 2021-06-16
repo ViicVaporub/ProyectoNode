@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
-
+import { AuthService } from '../service/auth.service';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -13,13 +13,13 @@ export class RegisterComponent implements OnInit {
     user: new FormControl(''),
     email: new FormControl(''),
     pass: new FormControl(''),
-    pass2: new FormControl(''),
   });
-  constructor() { }
+  constructor(private authSvc:AuthService) { }
 
   ngOnInit(): void {
   }
   onRegister(){
-    console.log('Form->',this.registerForm.value);
+   const { email, pass } = this.registerForm.value;
+   this.authSvc.register(email, pass);
   }
 }
