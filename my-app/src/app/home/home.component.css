@@ -1,0 +1,26 @@
+.centrar{
+    text-align: center;
+}
+.opacidad{
+    opacity: 0.75;
+}
+.card img:hover{
+    -webkit-transform: scale(1.1);
+	transform: scale(1.1);
+}
+.container{
+    background-image: url(../../assets/img/uchica.jpg);
+}
+.container2{
+    background-image: url(../../assets/img/banner.jpg);
+}
+.container3{
+    background-image: url(../../assets/img/baner2.jpg);
+}
+.card{
+    background-color: #8d1818cb;
+    color: white;
+}
+.card .card-body .card-text small{
+    color: white;
+}
