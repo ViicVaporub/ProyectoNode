@@ -1,37 +1,41 @@
 body{
-	width:auto;
-	height:auto;
-	font-family: 'Roboto Condensed', sans-serif;
-	
+	background-color: #25274d;
 }
-
-
-h1,h2,h3 {
-	margin:0 0 35px 0;
-	font-family: 'Patua One', cursive;
-	text-transform: uppercase;
-	letter-spacing:1px;
+.contact{
+	padding: 4%;
+	height: 400px;
 }
-
-p{
-	margin:0 0 25px;
-	font-size:18px;
-	line-height:1.6em;
+.col-md-3{
+	background: #343A40;
+	color: #fff;
+	padding: 4%;
+	border-top-left-radius: 0.5rem;
+	border-bottom-left-radius: 0.5rem;
 }
-a{
-	color:black;
+.contact-info{
+	margin-top:10%;
 }
-a:hover,a:focus{
-	text-decoration:none;
-	color:black;
+.contact-info img{
+	margin-bottom: 15%;
 }
-
-#contact{
-	background:#6d6d6d3f;
-	color:black;
-	padding-bottom:80px;
+.contact-info h2{
+	margin-bottom: 10%;
 }
-
-textarea.form-control{
-    height:100px;
+.col-md-9{
+	background: #fff;
+	padding: 3%;
+	border-top-right-radius: 0.5rem;
+	border-bottom-right-radius: 0.5rem;
+}
+.contact-form label{
+	font-weight:600;
+}
+.contact-form button{
+	background: #343A40;
+	color: #fff;
+	font-weight: 600;
+	width: 25%;
+}
+.contact-form button:focus{
+	box-shadow:none;
 }
