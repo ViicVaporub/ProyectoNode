@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "ginaweb-f37cb": {
+      "hosting": {
+        "ProyectoAngular": [
+          "ginaweb-f37cb"
+        ]
+      }
+    }
+  }
+}

@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -9,6 +11,7 @@ import { ContactanosComponent } from './contactanos/contactanos.component';
 import { FaqComponent } from './faq/faq.component';
 import { TiendaComponent } from './tienda/tienda.component';
 import { FooterComponent } from './footer/footer.component';
+import { DataDbService } from './service/data-db.service';
 
 @NgModule({
   declarations: [
@@ -22,9 +25,12 @@ import { FooterComponent } from './footer/footer.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+    DataDbService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
