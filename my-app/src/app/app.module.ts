@@ -12,8 +12,16 @@ import { ContactanosComponent } from './contactanos/contactanos.component';
 import { FaqComponent } from './faq/faq.component';
 import { TiendaComponent } from './tienda/tienda.component';
 import { FooterComponent } from './footer/footer.component';
+
 import { DataDbService } from './service/data-db.service';
 import { environment } from './../environments/environment';
+
+
+import { CrudComponent } from './crud/crud.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { AngularFireModule } from '@angular/fire';
+import { environment } from 'src/environments/environment';
 
 
 @NgModule({
@@ -24,17 +32,24 @@ import { environment } from './../environments/environment';
     ContactanosComponent,
     FaqComponent,
     TiendaComponent,
-    FooterComponent
+    FooterComponent,
+    CrudComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+
     ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule
   ],
   providers: [
     DataDbService
+
+    NgbModule,
+    ReactiveFormsModule,
+    FormsModule,
+    AngularFireModule.initializeApp(environment.firebase)
   ],
   bootstrap: [AppComponent]
 })
