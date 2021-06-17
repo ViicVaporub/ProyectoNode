@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../service/auth.service';
 
@@ -10,11 +10,11 @@ import { AuthService } from '../service/auth.service';
 })
 export class RegisterComponent implements OnInit {
   registerForm = new FormGroup({
-    name: new FormControl(''),
-    lname: new FormControl(''),
-    user: new FormControl(''),
-    email: new FormControl(''),
-    pass: new FormControl(''),
+    name: new FormControl('',Validators.required),
+    lname: new FormControl('',Validators.required),
+    user: new FormControl('',Validators.required),
+    email: new FormControl('',Validators.compose([Validators.required,Validators.email])),
+    pass: new FormControl('',Validators.required),
   });
   constructor(private authSvc:AuthService, private router:Router) { }
 

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../service/auth.service';
+import { Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -11,8 +12,8 @@ import { AuthService } from '../service/auth.service';
 export class LoginComponent implements OnInit {
   
   loginForm = new FormGroup({
-    email: new FormControl(''),
-    pass: new FormControl(''),
+    email: new FormControl('',Validators.compose([Validators.required,Validators.email])),
+    pass: new FormControl('',Validators.required),
   });
 
 
