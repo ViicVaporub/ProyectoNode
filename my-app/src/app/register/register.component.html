@@ -1,0 +1,36 @@
+<div class="row">
+    <div class="col-md-6 mx-auto mt5">
+        <div class="card">
+            <div class="card-body">
+                <h1 class="text-center">Registrate</h1>
+                <form [formGroup]="registerForm" (ngSubmit)="onRegister()">
+                    <div class="form-group">
+                        <label for="name">Nombre</label>
+                        <input type="text" class="form-control" formControlName="name" placeholder="Ingresa tu nombre">
+                    </div>
+                    <div class="form-group">
+                        <label for="lname">Apellido</label>
+                        <input type="text" class="form-control" formControlName="lname" placeholder="Ingresa tu apellido">
+                    </div>
+                    <div class="form-group">
+                        <label for="user">Usuario</label>
+                        <input type="text" class="form-control" formControlName="user" placeholder="Ingresa tu usuario">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" formControlName="email" placeholder="Ingresa tu email">
+                    </div>
+                    <div class="form-group">
+                        <label for="pass">Contraseña</label>
+                        <input type="password" class="form-control" formControlName="pass" placeholder="Ingresa tu contraseña">
+                    </div>
+            
+                    <button type="submit" class="btn btn-primary btn-lg btn-block" >Registrar</button>
+                </form>
+                <div class="form-group mt-3">
+                    <p>Tienes una cuenta? <a [routerLink]="['/login']">login</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

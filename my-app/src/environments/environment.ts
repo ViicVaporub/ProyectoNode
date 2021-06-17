@@ -14,16 +14,18 @@ export const environment = {
     measurementId: "G-YCD8QP8NE1"
   },
 
- firebaseConfig:{
-  apiKey: "AIzaSyBhLfRw9KoFGZC6IWMlEgxoBWh1sYRCuWI",
-  authDomain: "ginaweb-f37cb.firebaseapp.com",
-  projectId: "ginaweb-f37cb",
-  storageBucket: "ginaweb-f37cb.appspot.com",
-  messagingSenderId: "422912669583",
-  appId: "1:422912669583:web:9b4fd0660b2a48e3e07dfa",
-  measurementId: "G-4M9BTKV1HP"
-},
-};
+   firebaseConfig: {
+    apiKey: "AIzaSyCr43zRIZeT7_00G2NtuKi8oSB_QwYybQ4",
+    authDomain: "ginalogin-4fa2a.firebaseapp.com",
+    projectId: "ginalogin-4fa2a",
+    storageBucket: "ginalogin-4fa2a.appspot.com",
+    messagingSenderId: "425820913332",
+    appId: "1:425820913332:web:5bad49abb3a94dcce521e1",
+    measurementId: "G-RKYT8ED6R1"
+  },
+}
+
+
 
 
 /*
