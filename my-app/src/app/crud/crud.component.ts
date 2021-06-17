@@ -71,14 +71,14 @@ export class CrudComponent implements OnInit {
     })
   }
 
-  actualizarEstudiante(){
+  actualizarProducto(){
     if(!isNullOrUndefined(this.idFirebaseActualizar)){
       this.firebaseServiceService.updateProducto(this.idFirebaseActualizar,this.productoForm.value).then(resp=>{
         this.productoForm.reset();
         this.modalService.dismissAll();
       }).catch(error=>{
         console.error(error);
-      })
+      });
     }
   }
 
