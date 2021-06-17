@@ -13,9 +13,12 @@
 }
 .container2{
     background-image: url(../../assets/img/banner.jpg);
+    border-radius: 1pc;
 }
 .container3{
     background-image: url(../../assets/img/baner2.jpg);
+    border-radius: 1pc;
+    padding-bottom: 2pc;
 }
 .card{
     background-color: #8d1818cb;
