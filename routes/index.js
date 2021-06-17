@@ -8,7 +8,7 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 const app = express(); //crear al servidor
-const port = process.env.PORT || 3080;
+const port = process.env.PORT || 4020;
 app.use(cors())
 
 app.use(express.urlencoded());

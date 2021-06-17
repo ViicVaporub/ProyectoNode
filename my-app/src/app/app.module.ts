@@ -35,16 +35,15 @@ import { environment } from 'src/environments/environment';
   imports: [
     BrowserModule,
     AppRoutingModule,
-
     ReactiveFormsModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule
   ],
   providers: [
     DataDbService,
     NgbModule,
     ReactiveFormsModule,
-    AngularFireModule.initializeApp(environment.firebase)
+    
   ],
   bootstrap: [AppComponent]
 })
