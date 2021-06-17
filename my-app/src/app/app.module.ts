@@ -14,13 +14,10 @@ import { TiendaComponent } from './tienda/tienda.component';
 import { FooterComponent } from './footer/footer.component';
 
 import { DataDbService } from './service/data-db.service';
-import { environment } from './../environments/environment';
 
 
 import { CrudComponent } from './crud/crud.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-import { AngularFireModule } from '@angular/fire';
 import { environment } from 'src/environments/environment';
 
 
@@ -44,11 +41,9 @@ import { environment } from 'src/environments/environment';
     AngularFireAuthModule
   ],
   providers: [
-    DataDbService
-
+    DataDbService,
     NgbModule,
     ReactiveFormsModule,
-    FormsModule,
     AngularFireModule.initializeApp(environment.firebase)
   ],
   bootstrap: [AppComponent]
