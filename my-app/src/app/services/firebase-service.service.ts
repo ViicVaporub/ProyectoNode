@@ -25,4 +25,20 @@ export class FirebaseServiceService {
   deleteProducto(id:any){
     return this.firestore.collection("productos").doc(id).delete();
   }
+
+  getArticulo(){
+    return this.firestore.collection("articulos").snapshotChanges();
+  }
+
+  createArticulo(articulo:any){
+    return this.firestore.collection("articulos").add(articulo);
+  }
+
+  updateArticulo(codigo:any,articulo:any){
+    return this.firestore.collection("articulos").doc(codigo).update(articulo);
+  }
+
+  deleteArticulo(codigo:any){
+    return this.firestore.collection("articulos").doc(codigo).delete();
+  }
 }
