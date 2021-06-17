@@ -13,16 +13,6 @@ export const environment = {
     appId: "1:1024041023458:web:f978dc6648a891344cebbb",
     measurementId: "G-YCD8QP8NE1"
   },
-
-   firebaseConfig: {
-    apiKey: "AIzaSyCr43zRIZeT7_00G2NtuKi8oSB_QwYybQ4",
-    authDomain: "ginalogin-4fa2a.firebaseapp.com",
-    projectId: "ginalogin-4fa2a",
-    storageBucket: "ginalogin-4fa2a.appspot.com",
-    messagingSenderId: "425820913332",
-    appId: "1:425820913332:web:5bad49abb3a94dcce521e1",
-    measurementId: "G-RKYT8ED6R1"
-  },
 }
 
 
