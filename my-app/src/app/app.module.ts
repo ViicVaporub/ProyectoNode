@@ -13,7 +13,7 @@ import { FaqComponent } from './faq/faq.component';
 import { TiendaComponent } from './tienda/tienda.component';
 import { FooterComponent } from './footer/footer.component';
 import { DataDbService } from './service/data-db.service';
-import { environment } from 'src/environments/environment';
+import { environment } from './../environments/environment';
 
 
 @NgModule({
