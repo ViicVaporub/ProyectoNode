@@ -19,6 +19,7 @@ import { DataDbService } from './service/data-db.service';
 import { CrudComponent } from './crud/crud.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { environment } from 'src/environments/environment';
+import { InventarioComponent } from './inventario/inventario.component';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { environment } from 'src/environments/environment';
     FaqComponent,
     TiendaComponent,
     FooterComponent,
-    CrudComponent
+    CrudComponent,
+    InventarioComponent
   ],
   imports: [
     BrowserModule,

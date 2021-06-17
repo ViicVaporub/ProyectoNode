@@ -6,13 +6,14 @@ import { FirebaseServiceService } from '../services/firebase-service.service';
 import { isNullOrUndefined } from 'util';
 
 @Component({
-  selector: 'app-crud',
-  templateUrl: './crud.component.html',
-  styleUrls: ['./crud.component.css']
+  selector: 'app-inventario',
+  templateUrl: './inventario.component.html',
+  styleUrls: ['./inventario.component.css']
 })
-export class CrudComponent implements OnInit {
+export class InventarioComponent implements OnInit {
+
   closeResult = '';
-  productoForm:FormGroup;
+  InventarioForm:FormGroup;
   idFirebaseActualizar: string;
   actualizar:boolean;
 
@@ -23,30 +24,35 @@ export class CrudComponent implements OnInit {
     private modalService: NgbModal,
     public fb:FormBuilder,
     private firebaseServiceService : FirebaseServiceService
-  ) {}
+  ) { }
 
   ngOnInit(): void {
+
     this.idFirebaseActualizar="";
     this.actualizar=false;
 
-    this.config = {
-      itemPerPage: 5,
-      currentPage: 1,
-      totalItems: this.collection.count
-    };
-
-    this.productoForm = this.fb.group({
-      id:['',Validators.required],
+    this.InventarioForm = this.fb.group({
+      codigo:['',Validators.required],
       nombre:['',Validators.required],
-      costo:['',Validators.required]
+      tipo:['',Validators.required],
+      departamento:['',Validators.required],
+      proveedor:['',Validators.required],
+      valorcompra:['',Validators.required],
+      stock:['',Validators.required],
+      valoractivo:['',Validators.required]
     });
 
-    this.firebaseServiceService.getProducto().subscribe(resp=>{
+    this.firebaseServiceService.getArticulo().subscribe(resp=>{
       this.collection.data = resp.map((e:any)=>{
         return{
-          id:e.payload.doc.data().id,
+          codigo:e.payload.doc.data().codigo,
           nombre:e.payload.doc.data().nombre,
-          costo:e.payload.doc.data().costo,
+          tipo:e.payload.doc.data().tipo,
+          departamento:e.payload.doc.data().departamento,
+          proveedor:e.payload.doc.data().proveedor,
+          valorcompra:e.payload.doc.data().valorcompra,
+          stock:e.payload.doc.data().stock,
+          valoractivo:e.payload.doc.data().valoractivo,
           idfirebase: e.payload.doc.id
         }
       })
@@ -55,26 +61,27 @@ export class CrudComponent implements OnInit {
       console.error(error);
     }
     );
+
   }
-  
+
   eliminar(item:any):void{
-    this.firebaseServiceService.deleteProducto(item.idfirebase);
+    this.firebaseServiceService.deleteArticulo(item.idfirebase);
   }
 
-  guardarProducto():void{
+  guardarArticulo():void{
 
-    this.firebaseServiceService.createProducto(this.productoForm.value).then(resp=>{
-      this.productoForm.reset();
+    this.firebaseServiceService.createArticulo(this.InventarioForm.value).then(resp=>{
+      this.InventarioForm.reset();
       this.modalService.dismissAll();
     }).catch(error=>{
       console.error(error)
     })
   }
 
-  actualizarProducto(){
+  actualizarArticulo(){
     if(!isNullOrUndefined(this.idFirebaseActualizar)){
-      this.firebaseServiceService.updateProducto(this.idFirebaseActualizar,this.productoForm.value).then(resp=>{
-        this.productoForm.reset();
+      this.firebaseServiceService.updateArticulo(this.idFirebaseActualizar,this.InventarioForm.value).then(resp=>{
+        this.InventarioForm.reset();
         this.modalService.dismissAll();
       }).catch(error=>{
         console.error(error);
@@ -82,11 +89,18 @@ export class CrudComponent implements OnInit {
     }
   }
 
+  
+
   openEditar(content, item:any) {
-    this.productoForm.setValue({
-      id:item.id,
-      nombre: item.nombre,
-      costo:item.costo
+    this.InventarioForm.setValue({
+      codigo:item.codigo,
+      nombre:item.nombre,
+      tipo:item.tipo,
+      departamento:item.departamento,
+      proveedor:item.proveedor,
+      valorcompra:item.valorcompra,
+      stock:item.stock,
+      valoractivo:item.valoractivo
     });
     this.idFirebaseActualizar = item.idfirebase;
     this.actualizar = true;
@@ -94,7 +108,7 @@ export class CrudComponent implements OnInit {
     this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
       this.closeResult = `Closed with: ${result}`;
     }, (reason) => {
-      this.closeResult = 'Dismissed ${this.getDismissReason(reason)}';
+      this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
     });
   }
 
