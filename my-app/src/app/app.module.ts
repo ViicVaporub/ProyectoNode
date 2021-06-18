@@ -21,6 +21,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { environment } from 'src/environments/environment';
 import { InventarioComponent } from './inventario/inventario.component';
 import { CarritoComponent } from './carrito/carrito.component';
+import { VentasComponent } from './ventas/ventas.component';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { CarritoComponent } from './carrito/carrito.component';
     FooterComponent,
     CrudComponent,
     InventarioComponent,
-    CarritoComponent
+    CarritoComponent,
+    VentasComponent
   ],
   imports: [
     BrowserModule,

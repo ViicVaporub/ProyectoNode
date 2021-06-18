@@ -7,6 +7,7 @@ import { TiendaComponent } from './tienda/tienda.component';
 import { CrudComponent } from './crud/crud.component';
 import { InventarioComponent } from './inventario/inventario.component';
 import { CarritoComponent } from './carrito/carrito.component';
+import { VentasComponent } from './ventas/ventas.component';
 
 import {CustomPreloadStrategy} from './custom-preload';
 
@@ -22,6 +23,7 @@ const routes: Routes = [
   { path: 'crud', component: CrudComponent},
   { path: 'inventario', component: InventarioComponent},
   { path: 'carrito', component: CarritoComponent},
+  { path: 'ventas', component: VentasComponent},
   { path: '**', pathMatch: 'full', redirectTo: 'home'}
 ];
 
