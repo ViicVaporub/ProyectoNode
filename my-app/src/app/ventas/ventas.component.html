@@ -1,1 +1,43 @@
-<p>ventas works!</p>
+<button style="width:100%" type="button" class="btn btn-success" *ngIf="visible" (click)="Actualizar()">Actualizar</button>
+<div style="background-color:white;">
+    <div>
+        <h2 style="padding-left:100px;">Registro de ventas</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Tipo</th>
+                    <th>Departamento</th>
+                    <th>Numero de ventas</th>
+                    <th>Ganancia total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Juego</td>
+                    <td>Videojuegos</td>
+                    <td>{{NumeroJuegos}}</td>
+                    <td>${{GananciaJuegos}}</td>
+                </tr>
+                <tr>
+                    <td>Consola</td>
+                    <td>Videojuegos</td>
+                    <td>{{NumeroConsola}}</td>
+                    <td>${{GananciaConsola}}</td>
+                </tr>
+                <tr>
+                    <td>Figura</td>
+                    <td>Anime</td>
+                    <td>{{NumeroFigura}}</td>
+                    <td>${{GananciaFigura}}</td>
+                </tr>
+                <tr>
+                    <td>Manga</td>
+                    <td>Anime</td>
+                    <td>{{NumeroManga}}</td>
+                    <td>${{GananciaManga}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <hr>
+    </div>
+</div>
