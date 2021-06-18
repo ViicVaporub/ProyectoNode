@@ -10,6 +10,7 @@ import { CarritoComponent } from './carrito/carrito.component';
 import { VentasComponent } from './ventas/ventas.component';
 
 import {CustomPreloadStrategy} from './custom-preload';
+import { TablaComponent } from './tabla/tabla.component';
 
 
 
@@ -24,6 +25,7 @@ const routes: Routes = [
   { path: 'inventario', component: InventarioComponent},
   { path: 'carrito', component: CarritoComponent},
   { path: 'ventas', component: VentasComponent},
+  { path: 'tabla', component: TablaComponent},
   { path: '**', pathMatch: 'full', redirectTo: 'home'}
 ];
 

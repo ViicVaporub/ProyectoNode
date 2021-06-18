@@ -22,6 +22,9 @@ import { environment } from 'src/environments/environment';
 import { InventarioComponent } from './inventario/inventario.component';
 import { CarritoComponent } from './carrito/carrito.component';
 import { VentasComponent } from './ventas/ventas.component';
+import { TablaComponent } from './tabla/tabla.component';
+
+import {HttpClientModule} from '@angular/common/http';
 
 
 @NgModule({
@@ -35,14 +38,16 @@ import { VentasComponent } from './ventas/ventas.component';
     CrudComponent,
     InventarioComponent,
     CarritoComponent,
-    VentasComponent
+    VentasComponent,
+    TablaComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    HttpClientModule
   ],
   providers: [
     DataDbService,
