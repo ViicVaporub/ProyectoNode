@@ -32,7 +32,7 @@ export class VentasComponent implements OnInit {
   ngOnInit(): void {
     this.visible=true;
 
-    this.firebaseServiceService.getCarrito().subscribe(resp => {
+    this.firebaseServiceService.getVentas().subscribe(resp => {
       this.collection.data = resp.map((e: any) => {
         return {
           codigo: e.payload.doc.data().codigo,
