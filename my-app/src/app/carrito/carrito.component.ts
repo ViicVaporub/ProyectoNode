@@ -50,6 +50,6 @@ export class CarritoComponent implements OnInit {
   }
 
   realizar():void{
-
+    
   }
 }

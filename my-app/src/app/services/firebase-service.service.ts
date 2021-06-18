@@ -57,4 +57,20 @@ export class FirebaseServiceService {
   deleteCarrito(codigo:any){
     return this.firestore.collection("carrito").doc(codigo).delete();
   }
+
+  getVentas(){
+    return this.firestore.collection("ventas").snapshotChanges();
+  }
+
+  createVentas(venta:any){
+    return this.firestore.collection("ventas").add(venta);
+  }
+
+  updateVentas(codigo:any,venta:any){
+    return this.firestore.collection("ventas").doc(codigo).update(venta);
+  }
+
+  deleteVentas(codigo:any){
+    return this.firestore.collection("ventas").doc(codigo).delete();
+  }
 }
