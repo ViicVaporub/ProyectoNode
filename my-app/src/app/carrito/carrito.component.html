@@ -7,6 +7,7 @@
                     <th>Nombre</th>
                     <th>Tipo</th>
                     <th>Proveedor</th>
+                    <th>Cantidad</th>
                     <th>Precio</th>
                     <th>Opciones</th>
                 </tr>
@@ -16,6 +17,7 @@
                     <td>{{item.nombre}}</td>
                     <td>{{item.tipo}}</td>
                     <td>{{item.proveedor}}</td>
+                    <td>{{item.cantidad}}</td>
                     <td>$ {{item.valoractivo}}</td>
                     <td>
                         <button type="button" class="btn btn-danger" (click)="eliminar(item)">Eliminar</button>
@@ -24,5 +26,6 @@
             </tbody>
         </table>
         <hr>
+        <button style="width:100%" type="button" class="btn btn-success" (click)="realizar()">Realizar compra</button>
     </div>
 </div>

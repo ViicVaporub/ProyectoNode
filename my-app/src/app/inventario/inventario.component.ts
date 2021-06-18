@@ -89,8 +89,6 @@ export class InventarioComponent implements OnInit {
     }
   }
 
-
-
   openEditar(content, item: any) {
     this.InventarioForm.setValue({
       codigo: item.codigo,
