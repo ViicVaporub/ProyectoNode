@@ -1,1 +1,67 @@
-<p>tienda works!</p>
+<img class="img-fluid" src="../../assets/img/Tienda.jpg" alt="" >
+
+<br><hr style="color: white">
+
+<h1 style="color: white;" class="display-4 text-center"><img src="./../../assets/img/kamui.png" alt="" height="37pc" width="37pc"> Videojuegos <img src="./../../assets/img/kamui.png" alt="" height="37pc" width="37pc"></h1>
+<br>
+<div class="card-deck" >
+    <div>
+    <div class="card" *ngFor="let item of collection.data">
+        <div *ngIf="item.tipo=='Juego'">
+            <img src="../../assets/img/{{item.codigo}}.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{item.nombre}}</h5>
+                <p class="card-text">${{item.valoractivo}}</p>
+            </div>
+        </div>
+    </div>
+    </div>
+</div>
+  <br>
+  <h1 style="color: white;" class="display-4 text-center"><img src="./../../assets/img/kamui.png" alt="" height="37pc" width="37pc"> Consolas <img src="./../../assets/img/kamui.png" alt="" height="37pc" width="37pc"></h1>
+<br>
+<div class="card-deck">
+    <div>
+    <div class="card" *ngFor="let item of collection.data">
+    <div *ngIf="item.tipo=='Consola'">
+      <img src="../../assets/img/{{item.codigo}}.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">{{item.nombre}}</h5>
+        <p class="card-text">${{item.valoractivo}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  <br>
+  <h1 style="color: white;" class="display-4 text-center"><img src="./../../assets/img/kamui.png" alt="" height="37pc" width="37pc"> Figuras <img src="./../../assets/img/kamui.png" alt="" height="37pc" width="37pc"></h1>
+<br>
+<div class="card-deck">
+    <div>
+    <div class="card" *ngFor="let item of collection.data">
+        <div *ngIf="item.tipo=='Figura'">
+      <img src="../../assets/img/{{item.codigo}}.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">{{item.nombre}}</h5>
+        <p class="card-text">${{item.valoractivo}}</p>
+      </div>
+    </div>
+    </div>
+    </div>
+  </div>
+  <br>
+  <h1 style="color: white;" class="display-4 text-center"><img src="./../../assets/img/kamui.png" alt="" height="37pc" width="37pc"> Mangas <img src="./../../assets/img/kamui.png" alt="" height="37pc" width="37pc"></h1>
+<br>
+<div class="card-deck">
+    <div>
+    <div class="card" *ngFor="let item of collection.data">
+        <div *ngIf="item.tipo=='Manga'">
+      <img src="../../assets/img/{{item.codigo}}.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">{{item.nombre}}</h5>
+        <p class="card-text">${{item.valoractivo}}</p>
+      </div>
+    </div>
+</div>
+    </div>
+  </div>
