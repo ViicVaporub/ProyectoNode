@@ -14,5 +14,18 @@
     "jade": "~1.11.0",
     "morgan": "~1.9.1",
     "node-fetch": "^2.6.1"
-  }
+  },
+  "main": "app.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ViicVaporub/ProyectoNode.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ViicVaporub/ProyectoNode/issues"
+  },
+  "homepage": "https://github.com/ViicVaporub/ProyectoNode#readme",
+  "description": ""
 }
