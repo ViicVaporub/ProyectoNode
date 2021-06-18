@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
-import { CommonModule } from '@angular/common';  
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -13,8 +12,6 @@ import { FaqComponent } from './faq/faq.component';
 import { TiendaComponent } from './tienda/tienda.component';
 import { FooterComponent } from './footer/footer.component';
 import { DataDbService } from './service/data-db.service';
-import { AccesibilidadService } from './service/accesibilidad.service';
-
 import { CrudComponent } from './crud/crud.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { environment } from 'src/environments/environment';
@@ -32,8 +29,9 @@ const config = {
 };
 import { VentasComponent } from './ventas/ventas.component';
 import { TablaComponent } from './tabla/tabla.component';
-
 import {HttpClientModule} from '@angular/common/http';
+import { CommonModule } from '@angular/common';
+import { AccesibilidadService } from './service/accesibilidad.service';
 
 
 @NgModule({
@@ -59,7 +57,7 @@ import {HttpClientModule} from '@angular/common/http';
     ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
-    
+  
     HttpClientModule,
     CommonModule,
     FormsModule
