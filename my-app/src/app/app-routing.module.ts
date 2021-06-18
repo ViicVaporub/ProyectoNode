@@ -9,6 +9,7 @@ import { InventarioComponent } from './inventario/inventario.component';
 import { CarritoComponent } from './carrito/carrito.component';
 
 import {CustomPreloadStrategy} from './custom-preload';
+import { MsgComponent } from './msg/msg.component';
 
 
 
@@ -22,7 +23,9 @@ const routes: Routes = [
   { path: 'crud', component: CrudComponent},
   { path: 'inventario', component: InventarioComponent},
   { path: 'carrito', component: CarritoComponent},
+  { path: 'mensaje', component: MsgComponent},
   { path: '**', pathMatch: 'full', redirectTo: 'home'}
+  
 ];
 
 @NgModule({
