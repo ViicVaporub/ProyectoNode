@@ -65,13 +65,22 @@ export class VentasComponent implements OnInit {
         this.GananciaJuegos+=item.valoractivo;
       }
       if(item.tipo=='Consola'){
-        this.NumeroJuegos++;
+        this.NumeroConsola++;
+      }
+      if(item.tipo=='Consola'){
+        this.GananciaConsola+=item.valoractivo;
       }
       if(item.tipo=='Figura'){
-        this.NumeroJuegos++;
+        this.NumeroFigura++;
+      }
+      if(item.tipo=='Figura'){
+        this.GananciaFigura+=item.valoractivo;
       }
       if(item.tipo=='Manga'){
-        this.NumeroJuegos++;
+        this.NumeroManga++;
+      }
+      if(item.tipo=='Manga'){
+        this.GananciaManga+=item.valoractivo;
       }
     }
     this.visible=false;
