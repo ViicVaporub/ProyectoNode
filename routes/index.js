@@ -1,24 +1,28 @@
-var express = require('express');
-var router = express.Router();
-const cors = require("cors");
-
+const fetch = require("node-fetch");
+const express = require('express');
+const router = express.Router();
 
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
-const app = express(); //crear al servidor
-const port = process.env.PORT || 3080;
-app.use(cors())
 
-app.use(express.urlencoded());
-app.use(express.json());
-
+router.get("/fetch_tabla", async(req, res) => {
+  const url = `https://inventario-7fb44-default-rtdb.firebaseio.com/articulos.json`;
+  const options = {
+    "method": "GET",
+  };
+  const response = await fetch(url, options)
+  .then(res => res.json())
+  .catch(e =>{
+    console.error({
+      "message": "oh noes",
+      error:e,
+    });
+  });
+  console.log("RESPONSE: ", response);
+  res.send(response);
+});
 
 module.exports = router;
-
-
-app.listen(port, () => {
-  console.log(`hola servidor ejecucion en http://localhost:${port}`);
-})
