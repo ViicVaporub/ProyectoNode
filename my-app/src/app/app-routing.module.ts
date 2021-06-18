@@ -1,20 +1,21 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes, PreloadAllModules } from '@angular/router';
 
 import { ContactanosComponent } from './contactanos/contactanos.component';
 import { HomeComponent } from './home/home.component';
 import { TiendaComponent } from './tienda/tienda.component';
-import { FaqComponent } from './faq/faq.component';
 import { CrudComponent } from './crud/crud.component';
 import { InventarioComponent } from './inventario/inventario.component';
+
+import {CustomPreloadStrategy} from './custom-preload';
 
 
 
 const routes: Routes = [
-  { path: 'home', component: HomeComponent},
+  { path: 'home', loadChildren: () => import('./home/home.module').then(m => m.HomeModule) },
   { path: 'tienda', component: TiendaComponent},
   { path: 'contactanos', component: ContactanosComponent},
-  { path: 'faq', component: FaqComponent},
+  { path: 'faq', loadChildren: () => import('./faq/faq.module').then(m => m.FaqModule) },
   { path: 'login', loadChildren: () => import('./login/login.module').then(m => m.LoginModule) },
   { path: 'register', loadChildren: () => import('./register/register.module').then(m => m.RegisterModule) },
   { path: 'crud', component: CrudComponent},
@@ -23,7 +24,12 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {
+    preloadingStrategy: CustomPreloadStrategy
+  })],
+  providers: [
+    CustomPreloadStrategy
+  ],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
