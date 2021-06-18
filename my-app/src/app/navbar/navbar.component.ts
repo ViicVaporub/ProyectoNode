@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../service/auth.service';
 import { Observable } from 'rxjs';
 import { LoginComponent } from '../login/login.component';
+import { AccesibilidadService } from '../service/accesibilidad.service';
 
 @Component({
   selector: 'app-navbar',
@@ -12,8 +13,11 @@ import { LoginComponent } from '../login/login.component';
 })
 export class NavbarComponent implements OnInit {
   public user$: Observable<any> = this.authSvc.afAuth.user;
-  
-  constructor(private router: Router, private authSvc: AuthService, public valida:LoginComponent) { }
+  accesibilidad:AccesibilidadService; 
+
+  constructor(private router: Router, private authSvc: AuthService, public valida:LoginComponent,private lector:AccesibilidadService) { 
+    this.accesibilidad = lector;
+  }
 
   async ngOnInit() {}
   
@@ -22,6 +26,10 @@ export class NavbarComponent implements OnInit {
       await this.authSvc.logout();
       this.router.navigate(['/login']);
     }catch(error){console.log(error);}
+  }
+
+  apareceLector(){
+    this.lector.a = !this.lector.a;
   }
 
 }

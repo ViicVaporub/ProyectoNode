@@ -17,6 +17,9 @@
         </li><li class="nav-item" routerLinkActive="active">
           <a class="nav-link" [routerLink]="['tabla']">Tabla</a>
         </li>
+        <li class="nav-item" routerLinkActive="active">
+          <button (click)="apareceLector()" class="btn btn-outline-secondary">LECTURA DE VOZ</button>
+        </li>
       </ul>
 
       <ul class="navbar-nav mx-auto" *ngIf="user$ | async as user;else login">
