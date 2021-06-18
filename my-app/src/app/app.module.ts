@@ -26,9 +26,8 @@ import { InventarioComponent } from './inventario/inventario.component';
   declarations: [
     AppComponent,
     NavbarComponent,
-    HomeComponent,
+
     ContactanosComponent,
-    FaqComponent,
     TiendaComponent,
     FooterComponent,
     CrudComponent,
