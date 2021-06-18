@@ -47,6 +47,7 @@ export class TiendaComponent implements OnInit {
   }
 
   save(item:any):void{
+    this.firebaseServiceService.createVentas(item);
     this.firebaseServiceService.createCarrito(item).then(resp => {
       alert ("Se ha añadido al carrito correctamente");  
     }).catch(error => {
