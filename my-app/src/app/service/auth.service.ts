@@ -1,15 +1,16 @@
 import { Injectable } from '@angular/core';
 
 import { AngularFireAuth } from '@angular/fire/auth';
+import { getMaxListeners } from 'process';
+import { $ } from 'protractor';
 import { first } from 'rxjs/operators';
-
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-
+  //admin : Boolean = false;
   constructor(public afAuth: AngularFireAuth) { }
 
   async login(email : string, pass: string){
@@ -41,8 +42,7 @@ export class AuthService {
 
     getCurrentUser(){
       return this.afAuth.authState.pipe(first()).toPromise();
-  }
+    }
 
- 
  
 }
