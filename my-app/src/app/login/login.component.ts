@@ -52,11 +52,4 @@ export class LoginComponent implements OnInit {
     return this.admin;
     }catch(error){console.log(error);}
   }
-
-  
-  
-
-
-
-
 }

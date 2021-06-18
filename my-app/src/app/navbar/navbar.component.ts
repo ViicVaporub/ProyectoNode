@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../service/auth.service';
 import { Observable } from 'rxjs';
 import { LoginComponent } from '../login/login.component';
+import { MsgComponent } from '../msg/msg.component';
 import { AccesibilidadService } from '../service/accesibilidad.service';
 
 @Component({
