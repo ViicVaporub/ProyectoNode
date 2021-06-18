@@ -13,6 +13,7 @@ import { FirebaseServiceService } from '../services/firebase-service.service';
 export class TiendaComponent implements OnInit {
 
   collection = { count:0, data:[] }
+  collectioncarrito : any;
   videjuego:boolean;
 
   constructor(
@@ -43,6 +44,14 @@ export class TiendaComponent implements OnInit {
     }
     );
 
+  }
+
+  save(item:any):void{
+    this.firebaseServiceService.createCarrito(item).then(resp => {
+      alert ("Se ha añadido al carrito correctamente");  
+    }).catch(error => {
+      console.error(error)
+    })
   }
 
 }

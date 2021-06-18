@@ -7,9 +7,11 @@ import { TiendaComponent } from './tienda/tienda.component';
 import { CrudComponent } from './crud/crud.component';
 import { InventarioComponent } from './inventario/inventario.component';
 import { CarritoComponent } from './carrito/carrito.component';
+import { VentasComponent } from './ventas/ventas.component';
 
 import {CustomPreloadStrategy} from './custom-preload';
 import { MsgComponent } from './msg/msg.component';
+import { TablaComponent } from './tabla/tabla.component';
 
 
 
@@ -24,6 +26,8 @@ const routes: Routes = [
   { path: 'inventario', component: InventarioComponent},
   { path: 'carrito', component: CarritoComponent},
   { path: 'mensaje', component: MsgComponent},
+  { path: 'ventas', component: VentasComponent},
+  { path: 'tabla', component: TablaComponent},
   { path: '**', pathMatch: 'full', redirectTo: 'home'}
   
 ];

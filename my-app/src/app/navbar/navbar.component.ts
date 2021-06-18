@@ -4,6 +4,8 @@ import { AuthService } from '../service/auth.service';
 import { Observable } from 'rxjs';
 import { LoginComponent } from '../login/login.component';
 import { MsgComponent } from '../msg/msg.component';
+import { AccesibilidadService } from '../service/accesibilidad.service';
+
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
@@ -12,8 +14,11 @@ import { MsgComponent } from '../msg/msg.component';
 })
 export class NavbarComponent implements OnInit {
   public user$: Observable<any> = this.authSvc.afAuth.user;
-  
-  constructor(private router: Router, private authSvc: AuthService, public valida:LoginComponent) { }
+  accesibilidad:AccesibilidadService; 
+
+  constructor(private router: Router, private authSvc: AuthService, public valida:LoginComponent, private cacces:AccesibilidadService) { 
+    this.accesibilidad = cacces;
+  }
 
   async ngOnInit() {}
   
@@ -22,6 +27,10 @@ export class NavbarComponent implements OnInit {
       await this.authSvc.logout();
       this.router.navigate(['/login']);
     }catch(error){console.log(error);}
+  }
+
+  aparece(){
+    this.cacces.a = !this.cacces.a;
   }
 
 }

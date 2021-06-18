@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
-
+import { CommonModule } from '@angular/common';  
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -12,9 +12,8 @@ import { ContactanosComponent } from './contactanos/contactanos.component';
 import { FaqComponent } from './faq/faq.component';
 import { TiendaComponent } from './tienda/tienda.component';
 import { FooterComponent } from './footer/footer.component';
-
 import { DataDbService } from './service/data-db.service';
-
+import { AccesibilidadService } from './service/accesibilidad.service';
 
 import { CrudComponent } from './crud/crud.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -31,17 +30,26 @@ const config = {
   storageBucket: "inventario-7fb44.appspot.com",
   messagingSenderId: "1024041023458",
 };
+import { VentasComponent } from './ventas/ventas.component';
+import { TablaComponent } from './tabla/tabla.component';
+
+import {HttpClientModule} from '@angular/common/http';
+
+
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     MsgComponent,
+    
     ContactanosComponent,
     TiendaComponent,
     FooterComponent,
     CrudComponent,
     InventarioComponent,
     CarritoComponent,
+    VentasComponent,
+    TablaComponent,
     
   ],
   imports: [
@@ -52,12 +60,17 @@ const config = {
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
     
+    HttpClientModule,
+    CommonModule,
+    FormsModule
   ],
   providers: [
     DataDbService,
     NgbModule,
     ReactiveFormsModule,
-    WindowService
+    WindowService,
+    AccesibilidadService,
+    
   ],
   bootstrap: [AppComponent]
 })

@@ -3,6 +3,7 @@ import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import { FormBuilder,FormGroup,Validators } from '@angular/forms';
 
 import { FirebaseServiceService } from '../services/firebase-service.service';
+import { collapseTextChangeRangesAcrossMultipleVersions } from 'typescript';
 
 @Component({
   selector: 'app-carrito',
@@ -13,6 +14,7 @@ export class CarritoComponent implements OnInit {
 
   config:any;
   collection = { count:10, data:[] }
+  collectioncarrito = { count:0, data:[]}
 
   constructor(
     private modalService: NgbModal,
@@ -21,17 +23,33 @@ export class CarritoComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    for(var i=0;i<this.collection.count;i++){
-      this.collection.data.push({
-        nombre: "nombre"+1,
-      tipo: "tipo"+1,
-      proveedor: "proveedor"+1,
-      valoractivo: "v"+1
+    this.firebaseServiceService.getCarrito().subscribe(resp=>{
+      this.collection.data = resp.map((e:any)=>{
+        return{
+          codigo:e.payload.doc.data().codigo,
+          nombre:e.payload.doc.data().nombre,
+          tipo:e.payload.doc.data().tipo,
+          departamento:e.payload.doc.data().departamento,
+          proveedor:e.payload.doc.data().proveedor,
+          valorcompra:e.payload.doc.data().valorcompra,
+          stock:e.payload.doc.data().stock,
+          cantidad: 1,
+          valoractivo:e.payload.doc.data().valoractivo,
+          idfirebase: e.payload.doc.id
+        }
       })
+    },
+    error=>{
+      console.error(error);
     }
-  }
-  eliminar(item:any):void{
-    this.collection.data.pop();
+    );
   }
 
+  eliminar(item:any):void{
+    this.firebaseServiceService.deleteCarrito(item.idfirebase);
+  }
+
+  realizar():void{
+    
+  }
 }

@@ -41,4 +41,36 @@ export class FirebaseServiceService {
   deleteArticulo(codigo:any){
     return this.firestore.collection("articulos").doc(codigo).delete();
   }
+
+  getCarrito(){
+    return this.firestore.collection("carrito").snapshotChanges();
+  }
+
+  createCarrito(carrito:any){
+    return this.firestore.collection("carrito").add(carrito);
+  }
+
+  updateCarrito(codigo:any,carrito:any){
+    return this.firestore.collection("carrito").doc(codigo).update(carrito);
+  }
+
+  deleteCarrito(codigo:any){
+    return this.firestore.collection("carrito").doc(codigo).delete();
+  }
+
+  getVentas(){
+    return this.firestore.collection("ventas").snapshotChanges();
+  }
+
+  createVentas(venta:any){
+    return this.firestore.collection("ventas").add(venta);
+  }
+
+  updateVentas(codigo:any,venta:any){
+    return this.firestore.collection("ventas").doc(codigo).update(venta);
+  }
+
+  deleteVentas(codigo:any){
+    return this.firestore.collection("ventas").doc(codigo).delete();
+  }
 }
