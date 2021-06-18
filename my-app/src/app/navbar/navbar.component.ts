@@ -15,8 +15,8 @@ export class NavbarComponent implements OnInit {
   public user$: Observable<any> = this.authSvc.afAuth.user;
   accesibilidad:AccesibilidadService; 
 
-  constructor(private router: Router, private authSvc: AuthService, public valida:LoginComponent,private lector:AccesibilidadService) { 
-    this.accesibilidad = lector;
+  constructor(private router: Router, private authSvc: AuthService, public valida:LoginComponent, private cacces:AccesibilidadService) { 
+    this.accesibilidad = cacces;
   }
 
   async ngOnInit() {}
@@ -28,8 +28,8 @@ export class NavbarComponent implements OnInit {
     }catch(error){console.log(error);}
   }
 
-  apareceLector(){
-    this.lector.a = !this.lector.a;
+  aparece(){
+    this.cacces.a = !this.cacces.a;
   }
 
 }
