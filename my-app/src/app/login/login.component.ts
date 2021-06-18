@@ -13,7 +13,6 @@ import { AngularFireAuth } from '@angular/fire/auth';
 export class LoginComponent implements OnInit {
   
   loginForm = new FormGroup({
-    username: new FormControl('',Validators.required),
     email: new FormControl('',Validators.compose([Validators.required,Validators.email])),
     pass: new FormControl('',Validators.required),
   });

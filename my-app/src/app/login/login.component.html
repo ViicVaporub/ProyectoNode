@@ -6,11 +6,13 @@
                 <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
                     <div class="form-group">
                         <label for="user">Email</label>
-                        <input type="text" class="form-control" 
+                        <input
+                        [class.is-invalid]="loginForm.get('email').touched && loginForm.get('email').invalid"
+                        type="text" class="form-control" 
                         formControlName="email" 
                         placeholder="Ingresa tu usuario"
                         id="exampleFormControlInput1"
-                        [class.in-invalid]="loginForm.get('email').touched && loginForm.get('email').invalid">
+                       >
                     </div>
                     <div class="form-group">
                         <label for="pass">Contraseña</label>
@@ -18,7 +20,7 @@
                         class="form-control" 
                         formControlName="pass" 
                         placeholder="Ingresa tu contraseña"
-                        [class.in-invalid]="loginForm.get('pass').touched && loginForm.get('pass').invalid">
+                        [class.is-invalid]="loginForm.get('email').touched && loginForm.get('email').invalid">
                     </div>
                     
                     <button class="btn btn-primary btn-lg btn-block" (click)="valida()">Login</button>
