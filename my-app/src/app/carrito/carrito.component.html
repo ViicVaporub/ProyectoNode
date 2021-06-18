@@ -1,1 +1,28 @@
-<p>carrito works!</p>
+<div style="background-color:white;">
+    <div>
+        <h2 style="padding-left:100px;">Carrito de compra</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Tipo</th>
+                    <th>Proveedor</th>
+                    <th>Precio</th>
+                    <th>Opciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of collection.data">
+                    <td>{{item.nombre}}</td>
+                    <td>{{item.tipo}}</td>
+                    <td>{{item.proveedor}}</td>
+                    <td>$ {{item.valoractivo}}</td>
+                    <td>
+                        <button type="button" class="btn btn-danger" (click)="eliminar(item)">Eliminar</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <hr>
+    </div>
+</div>
