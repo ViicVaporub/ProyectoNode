@@ -50,6 +50,8 @@ export class CarritoComponent implements OnInit {
   }
 
   realizar():void{
-
+    for(const item of this.collection.data){
+      this.firebaseServiceService.deleteCarrito(item.idfirebase);
+    }
   }
 }

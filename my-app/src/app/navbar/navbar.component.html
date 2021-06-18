@@ -17,9 +17,7 @@
         </li><li class="nav-item" routerLinkActive="active">
           <a class="nav-link" [routerLink]="['tabla']">Tabla</a>
         </li>
-        <li class="nav-item" routerLinkActive="active">
-          <button (click)="apareceLector()" class="btn btn-outline-secondary">LECTURA DE VOZ</button>
-        </li>
+        
       </ul>
 
       <ul class="navbar-nav mx-auto" *ngIf="user$ | async as user;else login">
@@ -36,8 +34,13 @@
           <a class="nav-link" routerLink="/" (click)="onLogout()">Logout</a>
         </li>
         <li class="nav-item" >
-          <a  class="nav-link">{{ user?.email }}</a>
+          <a  class="nav-link">{{ user?.email}}</a>
         </li> 
+      </ul>
+      <ul>
+        <li class="nav-item" routerLinkActive="active">
+          <button (click)="aparece()" class="btn btn-outline-secondary">LECTURA DE VOZ</button>
+        </li>
       </ul>
       <ng-template #login>
         <ul class="navbar-nav mx-auto">

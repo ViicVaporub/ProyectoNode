@@ -1,0 +1,37 @@
+<div [hidden]="user">
+
+  <h1>Inicia sesion con tu celular</h1>
+
+  <label for="phone">Numero de celular</label><br>
+  <input type="text" [(ngModel)]="phone"  class="input" placeholder="+524496543251">
+  <p>Inserta numero de tu país</p>
+  <!-- <input type="text" [(ngModel)]="phoneNumber.area"     class="input" placeholder="949"  maxlength="3">
+  <input type="text" [(ngModel)]="phoneNumber.prefix"   class="input" placeholder="555"  maxlength="3">
+  <input type="text" [(ngModel)]="phoneNumber.line"     class="input" placeholder="5555" maxlength="4"> -->
+
+  <hr>
+
+  <div id="recaptcha-container"></div>
+
+  <hr>
+
+  <button class="button is-info" (click)="sendLoginCode()">Inicia Sesion con Mensaje</button>
+
+  <div *ngIf="windowRef.confirmationResult">
+    <hr>
+    <label for="code">Inserta el codigo de verificación</label><br>
+    <input type="text" name="code" [(ngModel)]="verificationCode" class="input">
+
+    <button class="button is-success" (click)="verifyLoginCode()">Verificar</button>
+  </div>
+
+</div>
+
+
+<div *ngIf="user">
+
+  <div class="notification is-success">Te has registrado exitosamente </div>
+
+  UserId: {{ user?.uid }}
+
+</div>

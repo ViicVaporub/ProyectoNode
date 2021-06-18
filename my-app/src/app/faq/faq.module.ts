@@ -16,7 +16,9 @@ const routes: Routes = [
     FaqComponent
   ],
   imports: [
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    CommonModule
   ]
 })
 export class FaqModule { }
+class MyComponentModule {}

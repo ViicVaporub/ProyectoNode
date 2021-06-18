@@ -32,7 +32,7 @@ export class VentasComponent implements OnInit {
   ngOnInit(): void {
     this.visible=true;
 
-    this.firebaseServiceService.getCarrito().subscribe(resp => {
+    this.firebaseServiceService.getVentas().subscribe(resp => {
       this.collection.data = resp.map((e: any) => {
         return {
           codigo: e.payload.doc.data().codigo,
@@ -65,13 +65,22 @@ export class VentasComponent implements OnInit {
         this.GananciaJuegos+=item.valoractivo;
       }
       if(item.tipo=='Consola'){
-        this.NumeroJuegos++;
+        this.NumeroConsola++;
+      }
+      if(item.tipo=='Consola'){
+        this.GananciaConsola+=item.valoractivo;
       }
       if(item.tipo=='Figura'){
-        this.NumeroJuegos++;
+        this.NumeroFigura++;
+      }
+      if(item.tipo=='Figura'){
+        this.GananciaFigura+=item.valoractivo;
       }
       if(item.tipo=='Manga'){
-        this.NumeroJuegos++;
+        this.NumeroManga++;
+      }
+      if(item.tipo=='Manga'){
+        this.GananciaManga+=item.valoractivo;
       }
     }
     this.visible=false;
