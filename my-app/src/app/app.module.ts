@@ -30,6 +30,8 @@ const config = {
 import { VentasComponent } from './ventas/ventas.component';
 import { TablaComponent } from './tabla/tabla.component';
 import {HttpClientModule} from '@angular/common/http';
+import { CommonModule } from '@angular/common';
+import { AccesibilidadService } from './service/accesibilidad.service';
 
 
 @NgModule({
