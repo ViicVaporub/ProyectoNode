@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
-
+import { CommonModule } from '@angular/common';  
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -12,9 +12,9 @@ import { ContactanosComponent } from './contactanos/contactanos.component';
 import { FaqComponent } from './faq/faq.component';
 import { TiendaComponent } from './tienda/tienda.component';
 import { FooterComponent } from './footer/footer.component';
-
+import { FormsModule } from '@angular/forms';
 import { DataDbService } from './service/data-db.service';
-
+import { AccesibilidadService } from './service/accesibilidad.service';
 
 import { CrudComponent } from './crud/crud.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -31,7 +31,7 @@ import {HttpClientModule} from '@angular/common/http';
   declarations: [
     AppComponent,
     NavbarComponent,
-
+    
     ContactanosComponent,
     TiendaComponent,
     FooterComponent,
@@ -39,7 +39,8 @@ import {HttpClientModule} from '@angular/common/http';
     InventarioComponent,
     CarritoComponent,
     VentasComponent,
-    TablaComponent
+    TablaComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -47,12 +48,15 @@ import {HttpClientModule} from '@angular/common/http';
     ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
-    HttpClientModule
+    HttpClientModule,
+    CommonModule,
+    FormsModule
   ],
   providers: [
     DataDbService,
     NgbModule,
     ReactiveFormsModule,
+    AccesibilidadService,
     
   ],
   bootstrap: [AppComponent]
