@@ -23,7 +23,7 @@
                         [class.is-invalid]="loginForm.get('email').touched && loginForm.get('email').invalid">
                     </div>
                     
-                    <button class="btn btn-primary btn-lg btn-block" (click)="valida()">Login</button>
+                    <button class="btn btn-danger btn-lg btn-block" (click)="valida()">Login</button>
                 </form>
                 <div class="form-group mt-3">
                     <p>Registrate <a [routerLink]="['/register']">ahora!</a></p>
