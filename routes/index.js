@@ -1,15 +1,11 @@
 const fetch = require("node-fetch");
 const express = require('express');
 const router = express.Router();
-const functions = require("firebase-functions");
-
-const app1 = express(); //crear al servidor
-const port = process.env.PORT || 3080;
 
 
 const admin = require('firebase-admin')
 
-const {Router} = require('express')
+
 const router = Router()
 
 admin.initializeApp({
