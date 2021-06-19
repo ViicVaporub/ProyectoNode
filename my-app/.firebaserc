@@ -14,5 +14,8 @@
         ]
       }
     }
+  },
+  "projects": {
+    "default": "inventario-7fb44"
   }
 }

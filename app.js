@@ -7,7 +7,18 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
-const app = express();
+const app = express(),
+      bodyParser = require("body-parser");
+      port = 3080;
+
+      app.use(bodyParser.json());
+      app.use(express.static(process.cwd()+"/my-app/dist/ProyectoAngular"));
+      app.get('/', (req,res) => {
+        res.sendFile(process.cwd()+"/my-app/dist/ProyectoAngular/index.html")
+      });
+      app.listen(port, () => {
+        console.log(`Server listening on the port::${port}`);
+    });
 
 const cors = require('cors');
 app.use(cors());
