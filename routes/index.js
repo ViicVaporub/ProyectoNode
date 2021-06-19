@@ -3,7 +3,10 @@ const express = require('express');
 const router = express.Router();
 const functions = require("firebase-functions");
 
+const app1 = express(); //crear al servidor
+const port = process.env.PORT || 3080;
 
+app1.use(cors())
 
 const admin = require('firebase-admin')
 
@@ -88,3 +91,8 @@ router.get("/fetch_tabla", async(req, res) => {
 });
 
 module.exports = router;
+
+
+app1.listen(port, () => {
+  console.log(`hola servidor ejecucion en http://localhost:${port}`);
+})
